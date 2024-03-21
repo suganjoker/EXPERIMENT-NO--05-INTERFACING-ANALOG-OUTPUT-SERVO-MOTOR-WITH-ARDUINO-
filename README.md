@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 13/03/2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: sugavarathan.l
+###  ROLL NO :212221220051
+###  DEPARTMENT: information technology
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -29,6 +29,7 @@ Servo motors are used for angular positioning, such as in radio control airplane
 
 ![image](https://user-images.githubusercontent.com/36288975/163544439-1f477927-fcd4-42f0-9ce4-c863fdbf1210.png)
 
+![WhatsApp Image 2024-03-21 at 10 13 57_581c77ed](https://github.com/suganjoker/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/105915942/c3845b61-fd67-40a1-b8b2-41b3b08bb371)
 
 
 #### Figure-01 SERVO MOTOR SPLIT VIEW 
@@ -48,7 +49,8 @@ An external controller (such as the Arduino) tells the servo where to go with a 
  
 
 
- 
+ ![WhatsApp Image 2024-03-21 at 10 14 08_e312185c](https://github.com/suganjoker/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/105915942/cf6d9046-afcf-4a57-b908-741eec5a3e7a)
+
 
 
 
@@ -56,7 +58,8 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 CIRCUIT DIAGRAM
  
- 
+ ![WhatsApp Image 2024-03-21 at 10 13 57_581c77ed](https://github.com/suganjoker/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/105915942/5beddaae-ca48-4fab-95aa-f5792ff48f59)
+
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
@@ -75,7 +78,38 @@ CIRCUIT DIAGRAM
 
 ### PROGRAM :
  
+#include<Servo.h>
 
+Servo s1;
+
+int pos=0;
+
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+  
+}
+
+void loop()
+{
+  for (pos=0;pos<=180;pos+=1)
+  {
+    s1.write(pos);
+    delay(15);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    
+  }
+  for (pos=180;pos>=1;pos-=1)
+  {
+    s1.write(pos);
+    delay(15);
+    //Serial.print("Angle=");
+    
+    
+  }
+}
 
 
 
